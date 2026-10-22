@@ -61,7 +61,7 @@ Program tidak menggunakan rantai `if/elif` yang memeriksa `type()` atau nama kel
 
 Screenshot berikut menunjukkan output aktual program saat `python 2509106081-MuhammadIhsanRosadi-PT-3.py` dijalankan, termasuk overriding, error saat abstract class diinstansiasi, penggunaan asosiasi/agregasi/komposisi, invoice dan pembayaran, duck typing, serta operator overloading menggunakan ekstensi vscode bernama TermSnap.
 
-![Screenshot output program](Screenshot-Output.png)
+![Screenshot output program](ScreenshotOutput.png)
 
 ## 6. Prinsip SOLID
 
