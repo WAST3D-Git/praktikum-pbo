@@ -63,14 +63,3 @@ Screenshot berikut menunjukkan output aktual program saat `python main.py` dijal
 ## 6. Prinsip SOLID
 
 Program menerapkan **Open/Closed Principle (OCP)** pada hierarki `Layanan`. Jenis layanan baru dapat ditambahkan sebagai subclass yang mengimplementasikan abstract method tanpa perlu mengubah alur umum pemesanan dan pencetakan invoice. Dengan demikian, fitur layanan dapat diperluas tanpa menambahkan percabangan berdasarkan nama atau tipe layanan.
-
-## Isi Paket
-
-Paket ini terdiri dari empat berkas:
-
-```text
-main.py
-readme.md
-classdiagram.png
-screenshot.png
-```
