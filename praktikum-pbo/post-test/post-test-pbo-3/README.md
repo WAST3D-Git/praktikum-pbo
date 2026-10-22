@@ -14,17 +14,20 @@ Pastikan Python 3.9 atau versi lebih baru telah terpasang. Program hanya menggun
 python main.py
 ```
 
-## 2. Class Diagram UML`
+## 2. Class Diagram UML
 
-![Class Diagram UML Sistem Manajemen Pemesanan Jasa Desain UI/UX pada Studio Digital](UML.png)
+![Class Diagram UML Sistem Manajemen Pemesanan Jasa Desain UI/UX pada Studio Digital](UML.svg)
 
 ### Relasi Antarkelas
 
-**Asosiasi — `Desainer` menggunakan `Layanan`.** Method `Desainer.kerjakan(layanan)` menerima objek layanan sebagai parameter dan menggunakannya saat method dipanggil. Objek layanan tidak disimpan sebagai atribut permanen oleh desainer, sehingga keduanya tetap dapat digunakan secara mandiri.
+**Asosiasi: `Desainer` → `Layanan`.**
+Desainer memakai layanan saat mengerjakannya, lewat method `Desainer.kerjakan(layanan)`. Relasinya asosiasi karena keduanya adalah objek yang berdiri sendiri dan hanya saling berhubungan saat method dipanggil, tanpa saling memiliki.
 
-**Agregasi — `Pesanan` memiliki `Klien`, `Layanan`, dan `Desainer`.** Objek klien dan layanan diberikan dari luar melalui konstruktor `Pesanan`, sementara desainer dibuat secara mandiri lalu ditambahkan ke tim pesanan. Hubungan ini tidak memiliki kepemilikan eksklusif; objek-objek tersebut tetap dapat hidup ketika pesanan dihapus selama masih memiliki referensi lain.
+**Agregasi: `Pesanan` ◇→ `Klien`, `Layanan`, dan `Desainer`.**
+Pesanan menampung klien, layanan, dan tim desainer yang dibuat di luar `Pesanan` lalu dimasukkan lewat konstruktor atau `tambah_desainer()`. Relasinya agregasi karena objek-objek itu tetap hidup walau pesanan dihapus, misalnya desainer yang sama bisa dipakai di pesanan lain.
 
-**Komposisi — `Pesanan` terdiri dari `Pembayaran`.** Objek `Pembayaran` dibuat langsung oleh konstruktor `Pesanan` untuk pesanan tersebut. Kepemilikan ini lebih kuat daripada agregasi karena siklus hidup pembayaran bergantung pada pesanan; jika pesanan dihapus dan tidak ada referensi lain ke pembayaran, objek pembayaran dapat dibersihkan oleh Python.
+**Komposisi: `Pesanan` ◆→ `Pembayaran`.**
+Pesanan membuat objek `Pembayaran` sendiri di dalam konstruktornya, sehingga pembayaran adalah bagian dari pesanan itu. Relasinya komposisi karena pembayaran tidak punya arti tanpa pesanannya, jadi saat pesanan dihapus pembayarannya ikut hilang (terbukti di output dengan `weakref`).
 
 ## 3. Abstraksi (*Abstract Base Class*)
 
@@ -56,7 +59,7 @@ Program tidak menggunakan rantai `if/elif` yang memeriksa `type()` atau nama kel
 
 ## 5. Bukti Output Eksekusi
 
-Screenshot berikut menunjukkan output aktual program saat `python main.py` dijalankan, termasuk overriding, error saat abstract class diinstansiasi, penggunaan asosiasi/agregasi/komposisi, invoice dan pembayaran, duck typing, serta operator overloading menggunakan ekstensi vscode bernama TermSnap.
+Screenshot berikut menunjukkan output aktual program saat `python 2509106081-MuhammadIhsanRosadi-PT-3.py` dijalankan, termasuk overriding, error saat abstract class diinstansiasi, penggunaan asosiasi/agregasi/komposisi, invoice dan pembayaran, duck typing, serta operator overloading menggunakan ekstensi vscode bernama TermSnap.
 
 ![Screenshot output program](Screenshot-Output.png)
 
