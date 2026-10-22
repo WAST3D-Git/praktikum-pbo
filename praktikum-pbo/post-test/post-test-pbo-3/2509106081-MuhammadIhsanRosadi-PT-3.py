@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+import gc
+import weakref
 
 class Pengguna:
     def __init__(self, nama, email, password):
@@ -265,9 +267,6 @@ if __name__ == "__main__":
     pesanan1.pembayaran.bayar()
 
     print("\n~ Menghapus Pesanan (bukti siklus hidup agregasi vs komposisi)")
-    import gc
-    import weakref
-
     ref_pembayaran = weakref.ref(pesanan1.pembayaran)
     del pesanan1
     gc.collect()
@@ -280,6 +279,6 @@ if __name__ == "__main__":
     kirim_notifikasi(NotifikasiEmail(), "Pesanan Redesign Landing Page telah diperbarui.")
     kirim_notifikasi(NotifikasiKonsol(), "Pesanan Redesign Landing Page telah diperbarui.")
 
-    print("\n~ Menguji Operator Overloading: operator < dan fungsi len()")
+    print("\n~ Menguji Operator Overloading: operator < dan fungsi str()")
     print(f"Riset UX lebih murah daripada Desain UI? {layanan2 < layanan1}")
     print(f"Representasi teks layanan: {str(layanan1)}")

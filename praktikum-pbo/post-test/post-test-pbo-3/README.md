@@ -11,7 +11,7 @@ Program juga menunjukkan penerapan konsep Pemrograman Berorientasi Objek (PBO), 
 Pastikan Python 3.9 atau versi lebih baru telah terpasang. Program hanya menggunakan standard library Python sehingga tidak memerlukan instalasi paket tambahan.
 
 ```bash
-python main.py
+python 2509106081-MuhammadIhsanRosadi-PT-3.py
 ```
 
 ## 2. Class Diagram UML
